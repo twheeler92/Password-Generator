@@ -4,7 +4,7 @@ var generateBtn = document.querySelector("#generate");
 var upercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
 var nums = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var specialCharacters = ["?", "%", "$", "@" ];
+var specialCharacters = ["?", "%", "$", "@", "!", "#", "^", "&", "*", "(", ")", ",", ">", "/", "?", ";", ":", "[", "]", "<", "{", "}", "|", "+", "="];
 
 // Write password to the #password input
 function writePassword() {
@@ -23,7 +23,7 @@ function generatePassword() {
   var passlength = 0;
 
   // prompt user to enter how long they want their password to be
-  var passlength = window.prompt("How many characters does your password need to be? (8-128)");
+  var passlength = window.prompt("How many characters does your password need? (8-128)");
 
   if (!passlength) {
     return;
@@ -38,7 +38,7 @@ function generatePassword() {
   }
   
   // setting wether to add special characters to password (looking for way to make it more random?)
-  var addUpper = window.prompt("How many UPPERCASE letters does your password need?");
+  var addUpper = window.confirm("Does your password need UPPERCASE letters?");
 
   if(!addUpper) {
     addUpper = 0;
@@ -56,7 +56,7 @@ function generatePassword() {
     addNums = 1;
   }
 
-  var addSpec = window.confirm("Does your password need NUMBERS?")
+  var addSpec = window.confirm("Does your password need SPECIAL CHARACTERS?")
 
   if(!addSpec) {
     addSpec = 0;
